@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@light-grey: #444444;
+
+/*default #333333*/
+
+@light-green: #66AA88;
+
+/*default #66AA88*/
+
+
+
+
+
+@button-grad1: @light-grey;
+
+/*default @light-grey*/
+
+@button-grad2: @button-grad1 - #222222;
+
+/*default -#222222*/
+
+@button-bottom: #101010;
+
+/*default -#111111*/
+
+@button-gradient: linear-gradient(@button-grad1, @button-grad2);
+
+@body-bg: #E6E2E0;
+
+/*default #F5F3EE*/
+
+@calc-grad1: #888888;
+
+/*default #888888*/
+
+@calc-grad2: @calc-grad1 - #444444;
+
+/*default -#444444*/
+
+@calc-gradient: linear-gradient(to bottom right, @calc-grad1, @calc-grad2);
+
+@screen-grad1: @light-green;
+
+/*default @light-green*/
+
+@screen-grad2: @screen-grad1 - #333333;
+
+/*default -#333333*/
+
+@screen-gradient: linear-gradient(@screen-grad1, @screen-grad2);
+
+
+body {
+  background: @body-bg;
+}
+
+.container-fluid {
+  display: table;
+  margin: auto;
+}
+
+.calculator {
+  background: @calc-gradient;
+  height: 30em;
+  width: 21.35em;
+  margin: 4em 0;
+  border-radius: 5px;
+  border-top: .2em solid #666;
+  border-right: .4em solid #272727;
+  border-bottom: .4em solid #202020;
+  border-left: .2em solid #666;
+  padding: .3em 0 .1em 0;
+  box-shadow: 1.5em 1.5em 3em 1em, inset .4em .4em .5em 0 #999999;
+}
+
+.screen {
+  height: 6.6em;
+  margin: .2em 1em;
+  background: @screen-gradient;
+  border: 2px solid #555;
+  overflow: hidden;
+  box-shadow: inset .6em 1em 2em 0 #70B090;
+  .display {
+    margin-top: 15px;
+    text-align: right;
+    font-size: 40px;
+  }
+  .history {
+    text-align: right;
+    margin-top: -20px;
+    font-size: 15px;
+    color: #040;
+  }
+}
+
+.calc-input {
+  margin-top: .6em;
+}
+.my-row {
+  margin: 0 1em;
+  padding: 0 .4em;
+  width: 18.8em;
+}
+
+.calc-button {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  color: #FFF;
+  width: 3em;
+  margin: .20em 0;
+  background: @button-gradient;
+  border-style: none;
+  border-bottom: .2em solid @button-bottom;
+  box-shadow: .1em .2em .2em 0 #444, inset .1em .1em .2em 0 #606060;
+  &.zero {
+    width: 125px;
+  }
+  &.equals {
+    margin-top: -2.8em;
+    margin-right: -2em;
+    height: 5.6em;
+  }
+}
+
+.btn {
+  color: #fff;
+  &.btn:focus {
+    color: #fff;
+    outline: none !important;
+    background: @button-gradient;
+  }
+  &.btn:active {
+    box-shadow: inset .3em .3em .2em 0 #333;
+    padding-bottom: -5px;
+    color: #fff;
+    background: @button-gradient;
+    position: relative;
+    top: 3px;
+    border-bottom: .1em solid @button-bottom;
+  }
+  &.btn:hover {
+    color: #fff;
+    background: @button-gradient;
+  }
+}
